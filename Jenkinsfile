@@ -10,7 +10,8 @@ pipeline {
     stage('Build') {
       steps {
         sh '''npm --version
-npm cache clean --force'''
+npm cache clean --force
+npm install'''
       }
     }
   }
