@@ -30,7 +30,7 @@ pipeline {
     stage('Sonar Scan'){
       agent {
         docker {
-          image 'maven:current-alpine'
+          image 'maven:latest'
         }
       }
       environment {
