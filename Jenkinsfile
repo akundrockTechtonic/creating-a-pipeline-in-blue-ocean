@@ -29,7 +29,7 @@ pipeline {
     // }
     stage('Sonar Scan'){
       agent {
-        docker {
+        dockerfile {
           filename 'sonar.Dockerfile'
           // image 'maven:latest'
         }
