@@ -29,10 +29,13 @@ pipeline {
     // }
     stage('Sonar Scan'){
       agent {
-        dockerfile {
-          filename 'sonar.Dockerfile'
-          // image 'maven:latest'
+        docker{
+          image 'node-java:latest'
         }
+        // dockerfile {
+        //   filename 'sonar.Dockerfile'
+        //   // image 'maven:latest'
+        // }
       }
       environment {
         scannerHome = tool 'SonarQubeScanner4'
