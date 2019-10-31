@@ -21,6 +21,11 @@ pipeline {
       }
     }
     stage('Sonar Scan'){
+      agent {
+        docker {
+          image 'maven:current-alpine'
+        }
+      }
       environment {
         scannerHome = tool 'SonarQubeScanner4'
       }
