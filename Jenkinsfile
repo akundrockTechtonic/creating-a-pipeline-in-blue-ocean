@@ -30,7 +30,7 @@ pipeline {
     stage('Sonar Scan'){
       agent {
         docker{
-          image 'node-java:latest'
+          image 'maven:latest'
         }
         // dockerfile {
         //   filename 'sonar.Dockerfile'
