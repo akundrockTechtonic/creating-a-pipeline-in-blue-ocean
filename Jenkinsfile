@@ -13,20 +13,20 @@ pipeline {
         sh 'npm install'
       }
     }
-    stage('Test') {
-      environment {
-        CI = 'true'
-      }
-      agent {
-        docker {
-          args '-p 3000:3000 -p 5000:5000'
-          image 'node:current-alpine'
-        }
-      }
-      steps {
-        sh './jenkins/scripts/test.sh'
-      }
-    }
+    // stage('Test') {
+    //   environment {
+    //     CI = 'true'
+    //   }
+    //   agent {
+    //     docker {
+    //       args '-p 3000:3000 -p 5000:5000'
+    //       image 'node:current-alpine'
+    //     }
+    //   }
+    //   steps {
+    //     sh './jenkins/scripts/test.sh'
+    //   }
+    // }
     stage('Sonar Scan'){
       agent {
         docker {
